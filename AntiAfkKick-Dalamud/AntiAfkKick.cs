@@ -78,10 +78,10 @@ namespace AntiAfkKick_Dalamud
                                 Svc.Log.Verbose($"Sending anti-afk keypress: {mwh:X16}");
                                 new TickScheduler(delegate
                                 {
-                                    SendMessage(mwh, WM_KEYDOWN, (IntPtr)LControlKey, (IntPtr)0);
+                                    SendMessage(mwh, WM_KEYDOWN, (IntPtr)IMEConvert, (IntPtr)0);
                                     new TickScheduler(delegate
                                     {
-                                        SendMessage(mwh, WM_KEYUP, (IntPtr)LControlKey, (IntPtr)0);
+                                        SendMessage(mwh, WM_KEYUP, (IntPtr)IMEConvert, (IntPtr)0);
                                         Svc.Log.Verbose($"Afk timer after: {string.Join(",", GetTimers().Select(x => x.ToString()))}");
                                     }, Svc.Framework, 200);
                                 }, Svc.Framework, 0);

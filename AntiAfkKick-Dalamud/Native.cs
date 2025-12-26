@@ -78,6 +78,7 @@ namespace AntiAfkKick
         {
             public const int LControlKey = 162;
             public const int Space = 32;
+            public const int IMEConvert = 28;
 
             public const uint WM_KEYUP = 0x101;
             public const uint WM_KEYDOWN = 0x100;
